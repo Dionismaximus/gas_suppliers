@@ -16,6 +16,3 @@ function unitCost(supplier) {
     }
     return unitCost
 }
-
-let yearCost = unitCost('SSE_Electricity');
-console.log(yearCost)
