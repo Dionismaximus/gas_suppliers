@@ -11,11 +11,11 @@
     <form id="input-form">
         <div class="form-group">
           <label for="name">Please enter your name</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" maxlength="30" class="form-control" id="name" required>
         </div>
         <div class="form-group">
           <label for="kWh_Annual_Usage">kWh_Annual_Usage</label>
-          <input type="number" max="1000000" class="form-control" id="kWh_Annual_Usage">
+          <input type="number" max=1000000 class="form-control" id="kWh_Annual_Usage" required>
           <small class="form-text">Please enter the required kWh Annual Usage for the calculation.</small>
         </div>
         <button type="submit" id="submit" onclick="start()" class="btn btn-primary">Submit</button>

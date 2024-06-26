@@ -3,27 +3,27 @@ let kWh_Annual_Usage ='';
 
 
 
-//Prevent page from reload. (it took so much effort to realize it was necessary!)
+//Prevent page from reload.
 document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault()
   });
 
 
-
 function start() {
     kWh_Annual_Usage = document.getElementById('kWh_Annual_Usage').value;
     userName = document.getElementById('name').value;
-    
+
     let info_message = document.getElementById('info-message');
     info_message.innerHTML = `<p>Estimated annual gas cost for ${userName} based on ${kWh_Annual_Usage} kWh annual usage.</p>`
 
     main();
-    
 }
 
 
 
-
+/**
+ * Calculate annual unit cost
+ */
 function unitCost(supplier) {
     let annualUnitCost;
     if (supplier === 'SSE_Electricity') {
@@ -56,6 +56,10 @@ function unitCost(supplier) {
     return annualUnitCost
 }
 
+
+/**
+ * Calculate carbon tax
+ */
 function carbonTax() {
     let totalCarbonTax = kWh_Annual_Usage * 0.877 / 100;
 
@@ -67,6 +71,10 @@ function carbonTax() {
     return totalCarbonTax
 }
 
+
+/**
+ * Calculate VAT
+ */
 function VAT(supplier, annualUnitCost, totalCarbonTax) {
     let total_VAT = ''
     if (supplier === 'SSE_Electricity') {
@@ -99,6 +107,10 @@ function VAT(supplier, annualUnitCost, totalCarbonTax) {
     return total_VAT
 }
 
+
+/**
+ * Calculate total cost
+ */
 function totalCost(supplier, annualUnitCost, totalCarbonTax, total_VAT) {
     let total_Annual_Cost;
     if (supplier === 'SSE_Electricity') {
@@ -139,8 +151,7 @@ function allCalculations(supplier) {
     let annualUnitCost = unitCost(supplier);
 
     let totalVAT = VAT(supplier, annualUnitCost, totalCarbonTax);
-    let total_Annual_Cost = totalCost(supplier, annualUnitCost, totalCarbonTax, totalVAT)
-    console.log(total_Annual_Cost)
+    totalCost(supplier, annualUnitCost, totalCarbonTax, totalVAT);
 }
 
 // toLocaleString("en-US", {style:"currency", currency:"EUR"})
