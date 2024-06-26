@@ -6,3 +6,12 @@
 label {
     margin-top: 15px;
 }
+
+.info-block {
+    border: 2px solid #37002f;
+    margin: 0 40px;
+}
+
+#info-message {
+    margin: 50px 20px 0 50px;
+}

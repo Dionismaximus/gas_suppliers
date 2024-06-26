@@ -15,60 +15,64 @@
         </div>
         <div class="form-group">
           <label for="kWh_Annual_Usage">kWh_Annual_Usage</label>
-          <input type="password" class="form-control" id="kWh_Annual_Usage">
-          <small id="kWh_Annual_Usage" class="form-text text-muted">Please enter the required kWh Annual Usage for the calculation.</small>
+          <input type="number" max="1000000" class="form-control" id="kWh_Annual_Usage">
+          <small class="form-text">Please enter the required kWh Annual Usage for the calculation.</small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit" onclick="start()" class="btn btn-primary">Submit</button>
       </form>
-  
+    
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Supplier</th>
-          <th scope="col">Standing Charge</th>
-          <th scope="col">Unit Cost</th>
-          <th scope="col">Carbon Tax</th>
-          <th scope="col">VAT</th>
-          <th scope="col">Total Cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">SSE Electricity</th>
-          <td>€139.92</td>
-          <td id="unitCost_SSE_El"></td>
-          <td class="carbon_Tax"></td>
-          <td id="SSE_El_VAT"></td>
-          <td id="SSE_El_Total_Cost"></td>
-        </tr>
-        <tr>
-          <th scope="row">FloGas</th>
-          <td>€154.12</td>
-          <td id="unitCost_FloGas"></td>
-          <td class="carbon_Tax"></td>
-          <td id="FloGas_VAT"></td>
-          <td id="FloGas_Total_Cost"></td>
-        </tr>
-        <tr>
-          <th scope="row">Electricity Ireland</th>
-          <td>€152.19</td>
-          <td id="unitCost_El_IE"></td>
-          <td class="carbon_Tax"></td>
-          <td id="El_IE_VAT"></td>
-          <td id="El_IE_Total_Cost"></td>
-        </tr>
-        <tr>
-          <th scope="row">PrePay Power</th>
-          <td>€142.81</td>
-          <td id="unitCost_PrePay_P"></td>
-          <td class="carbon_Tax"></td>
-          <td id="PrePay_P_VAT"></td>
-          <td id="PrePay_P_Total_Cost"></td>
-        </tr>
-      </tbody>
-    </table>
-
+    <div id="info-message">
+      <p>&nbsp</p>
+    </div>
+    <div class="info-block">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Supplier</th>
+            <th scope="col">Standing Charge</th>
+            <th scope="col">Unit Cost</th>
+            <th scope="col">Carbon Tax</th>
+            <th scope="col">VAT</th>
+            <th scope="col">Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">SSE Electricity</th>
+            <td>€139.92</td>
+            <td id="unitCost_SSE_El"></td>
+            <td class="carbon_Tax"></td>
+            <td id="SSE_El_VAT"></td>
+            <td id="SSE_El_Total_Cost"></td>
+          </tr>
+          <tr>
+            <th scope="row">FloGas</th>
+            <td>€154.12</td>
+            <td id="unitCost_FloGas"></td>
+            <td class="carbon_Tax"></td>
+            <td id="FloGas_VAT"></td>
+            <td id="FloGas_Total_Cost"></td>
+          </tr>
+          <tr>
+            <th scope="row">Electricity Ireland</th>
+            <td>€152.19</td>
+            <td id="unitCost_El_IE"></td>
+            <td class="carbon_Tax"></td>
+            <td id="El_IE_VAT"></td>
+            <td id="El_IE_Total_Cost"></td>
+          </tr>
+          <tr>
+            <th scope="row">PrePay Power</th>
+            <td>€142.81</td>
+            <td id="unitCost_PrePay_P"></td>
+            <td class="carbon_Tax"></td>
+            <td id="PrePay_P_VAT"></td>
+            <td id="PrePay_P_Total_Cost"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,28 @@
 let userName = "";
-let kWh_Annual_Usage = 11000;
+let kWh_Annual_Usage ='';
+
+
+
+//Prevent page from reload. (it took so much effort to realize it was necessary!)
+document.getElementById("submit").addEventListener("click", function(event){
+    event.preventDefault()
+  });
+
+
+
+function start() {
+    kWh_Annual_Usage = document.getElementById('kWh_Annual_Usage').value;
+    userName = document.getElementById('name').value;
+    
+    let info_message = document.getElementById('info-message');
+    info_message.innerHTML = `<p>Estimated annual gas cost for ${userName} based on ${kWh_Annual_Usage} kWh annual usage.</p>`
+
+    main();
+    
+}
+
+
+
 
 function unitCost(supplier) {
     let annualUnitCost;
@@ -109,7 +132,7 @@ function totalCost(supplier, annualUnitCost, totalCarbonTax, total_VAT) {
 }
 
 
-function main(supplier) {
+function allCalculations(supplier) {
     
     let totalCarbonTax = carbonTax();
 
@@ -122,7 +145,9 @@ function main(supplier) {
 
 // toLocaleString("en-US", {style:"currency", currency:"EUR"})
 
-main('SSE_Electricity');
-main('FloGas');
-main('Electric_Ireland');
-main('PrePay_Power');
+function main() {
+    allCalculations('SSE_Electricity');
+    allCalculations('FloGas');
+    allCalculations('Electric_Ireland');
+    allCalculations('PrePay_Power');
+}
