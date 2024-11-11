@@ -1,4 +1,4 @@
-Link to the live site here: [Resume-project](https://dionismaximus.github.io/gas_suppliers/)
+Link to the live site here: [Gas-suppliers-project](https://dionismaximus.github.io/gas_suppliers/)
 
 ![website_screenshot1](https://i.ibb.co/yNVHh31/gas-suppliers.png)
 
